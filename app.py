@@ -60,8 +60,8 @@ def addCartItem():
 @app.route("/cart-items", methods=["GET"])
 def getCartItems():
     allCartItems = CartItem.query.all()
-    result = cartItem_schema.dump(allCartItems)
-    return jsonify(result.data)
+    result = cartItems_schema.dump(allCartItems)
+    return(jsonify(result))
 
 # Endpoint to query single cart item
 @app.route("/cart-item/<id>", methods=["GET"])
